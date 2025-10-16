@@ -1,6 +1,6 @@
 # 🌍 Workations Management System
 
-A full-stack application for managing employee workations (work + vacation) with risk assessment based on trip duration. Built with Spring Boot, Angular, and PostgreSQL.
+A full-stack application for managing employee workations (work + vacation) with risk assessment based on trip duration. Built with Spring Boot, Angular, and H2 Database.
 
 ## 📋 Table of Contents
 
@@ -79,4 +79,5 @@ Before you begin, ensure you have the following installed:
 git clone <repository-url>
 cd demonic
 ```
+
 
