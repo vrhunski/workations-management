@@ -34,7 +34,7 @@ A full-stack application for managing employee workations (work + vacation) with
 - **Java 21**
 - **Spring Boot 3.x**
 - **Spring Data JPA**
-- **PostgreSQL**
+- **H2 Database**
 - **MapStruct** (DTO mapping)
 - **Lombok** (Boilerplate reduction)
 - **JUnit 5** (Testing)
@@ -63,10 +63,8 @@ Before you begin, ensure you have the following installed:
   ```bash
   npm -v
   ```
-- **PostgreSQL 14+** (or use Docker Compose)
-  ```bash
-  psql --version
-  ```
+- **H2 Database
+  
 
 ### Optional
 - **Maven 3.9+** (included via Maven Wrapper)
@@ -81,3 +79,4 @@ Before you begin, ensure you have the following installed:
 git clone <repository-url>
 cd demonic
 ```
+
