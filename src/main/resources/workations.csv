@@ -1,0 +1,51 @@
+id,employee,country,country_dest,start_date,end_date,days,risk
+1,Sarah Johnson,United States,Portugal,2025-03-15,2025-05-29,75,LOW_RISK
+2,Michael Chen,Singapore,Japan,2025-02-10,2025-02-24,14,NO_RISK
+3,Emma Rodriguez,Spain,Mexico,2025-04-01,2025-06-25,85,LOW_RISK
+4,James Wilson,United Kingdom,Thailand,2025-05-05,2025-08-18,105,HIGH_RISK
+5,Olivia Brown,Canada,Iceland,2025-03-20,2025-05-10,51,LOW_RISK
+6,Liam Martinez,Germany,Croatia,2025-06-10,2025-09-15,97,LOW_RISK
+7,Sophia Anderson,Australia,Indonesia,2025-07-15,2025-11-02,110,HIGH_RISK
+8,Noah Taylor,France,Morocco,2025-04-12,2025-05-08,26,NO_RISK
+9,Ava Thomas,Netherlands,Greece,2025-05-20,2025-08-10,82,LOW_RISK
+10,Ethan Garcia,Sweden,Italy,2025-08-01,2025-08-29,28,NO_RISK
+11,Isabella Lee,United States,Costa Rica,2025-03-10,2025-06-30,112,HIGH_RISK
+12,Mason Kim,South Korea,Vietnam,2025-06-01,2025-09-05,96,LOW_RISK
+13,Mia Patel,India,United Arab Emirates,2025-04-15,2025-05-20,35,NO_RISK
+14,Lucas Schmidt,Switzerland,Austria,2025-07-20,2025-10-25,97,LOW_RISK
+15,Charlotte O'Brien,Ireland,Spain,2025-05-10,2025-08-28,110,HIGH_RISK
+16,Benjamin Cohen,Israel,Turkey,2025-09-01,2025-09-30,29,NO_RISK
+17,Amelia Nguyen,Vietnam,Malaysia,2025-06-15,2025-09-20,97,LOW_RISK
+18,Oliver Müller,Austria,Czech Republic,2025-08-10,2025-09-18,39,NO_RISK
+19,Harper Silva,Brazil,Argentina,2025-10-01,2026-01-25,116,HIGH_RISK
+20,William Zhang,China,South Korea,2025-07-01,2025-10-12,103,HIGH_RISK
+21,Evelyn Andersson,Norway,Denmark,2025-09-15,2025-11-05,51,LOW_RISK
+22,Alexander Popov,Russia,Georgia,2025-05-25,2025-09-08,106,HIGH_RISK
+23,Abigail Morrison,New Zealand,Australia,2025-11-01,2025-12-18,47,NO_RISK
+24,Daniel Kowalski,Poland,Hungary,2025-08-20,2025-11-30,102,HIGH_RISK
+25,Emily Dupont,Belgium,Luxembourg,2025-06-05,2025-07-15,40,NO_RISK
+26,Matthew Hassan,Egypt,Jordan,2025-04-20,2025-07-28,99,LOW_RISK
+27,Sofia Rossi,Italy,Malta,2025-07-10,2025-08-05,26,NO_RISK
+28,David O'Connor,United States,Ireland,2025-09-05,2026-01-10,127,HIGH_RISK
+29,Victoria Santos,Philippines,Singapore,2025-10-15,2026-01-05,82,LOW_RISK
+30,Joseph Kumar,India,Sri Lanka,2025-11-10,2026-02-20,102,HIGH_RISK
+31,Sophie Martin,France,Italy,2025-03-01,2025-04-12,42,NO_RISK
+32,Marcus Weber,Germany,Spain,2025-04-10,2025-07-22,103,HIGH_RISK
+33,Elena Popescu,Romania,Greece,2025-05-15,2025-08-01,78,LOW_RISK
+34,Ryan O'Neill,Ireland,United States,2025-06-20,2025-10-15,117,HIGH_RISK
+35,Yuki Tanaka,Japan,Australia,2025-07-05,2025-08-28,54,LOW_RISK
+36,Ana Silva,Portugal,Brazil,2025-08-12,2025-12-05,115,HIGH_RISK
+37,Lars Hansen,Denmark,Norway,2025-09-10,2025-10-25,45,NO_RISK
+38,Priya Sharma,India,Singapore,2025-10-05,2026-01-28,115,HIGH_RISK
+39,Carlos Mendez,Mexico,Spain,2025-11-15,2026-01-10,56,LOW_RISK
+40,Fatima Al-Rashid,United Arab Emirates,Turkey,2025-12-01,2026-01-18,48,NO_RISK
+41,Giovanni Bianchi,Italy,France,2025-02-15,2025-06-08,113,HIGH_RISK
+42,Ingrid Svensson,Sweden,Finland,2025-03-25,2025-05-30,66,LOW_RISK
+43,Ahmed Khan,Pakistan,United Kingdom,2025-04-18,2025-08-25,129,HIGH_RISK
+44,Nina Kowalska,Poland,Germany,2025-05-22,2025-08-18,88,LOW_RISK
+45,Tomas Novak,Czech Republic,Austria,2025-06-30,2025-08-12,43,NO_RISK
+46,Lucia Fernandez,Spain,Portugal,2025-07-18,2025-11-22,127,HIGH_RISK
+47,Dmitri Volkov,Russia,Estonia,2025-08-05,2025-10-28,84,LOW_RISK
+48,Maria Costa,Brazil,Portugal,2025-09-20,2025-11-08,49,NO_RISK
+49,Hiroshi Sato,Japan,South Korea,2025-10-10,2026-02-15,128,HIGH_RISK
+50,Isabella Rossi,Italy,Switzerland,2025-11-25,2026-03-12,107,HIGH_RISK

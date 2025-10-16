@@ -1,0 +1,16 @@
+<!-- root layout: sidebar on the left, main on the right -->
+<div class="app-layout">
+  <app-sidebar class="app-sidebar"></app-sidebar>
+
+  <main class="main-content" role="main">
+    <!-- header sits at the top of the main area -->
+    <header class="app-header">
+      <app-header></app-header>
+    </header>
+
+    <!-- routed pages render here, to the right of the sidebar -->
+    <section class="page-content">
+      <router-outlet></router-outlet>
+    </section>
+  </main>
+</div>

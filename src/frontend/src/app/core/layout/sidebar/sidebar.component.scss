@@ -1,0 +1,97 @@
+$sidebar-bg: #0f6169;
+$sidebar-hover: #138996;
+$sidebar-active-border: #ffffff;
+$text-color: #ffffff;
+$sidebar-width: 220px;
+$sidebar-collapsed-width: 70px;
+$transition-speed: 0.3s;
+
+.sidebar {
+  width: $sidebar-width;
+  height: 100vh;
+  background-color: $sidebar-bg;
+  display: flex;
+  flex-direction: column;
+  padding-top: 0.5rem;
+  transition: width $transition-speed ease;
+  overflow: hidden;
+
+  &.collapsed {
+    width: $sidebar-collapsed-width;
+
+    .label {
+      opacity: 0;
+      visibility: hidden;
+      width: 0;
+      transition: opacity 0.2s ease, visibility 0.2s ease, width 0.2s ease;
+    }
+
+    .toggle-btn {
+      transform: rotate(180deg);
+    }
+  }
+
+  .sidebar-header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0.5rem 1rem;
+
+    .toggle-btn {
+      background: none;
+      border: none;
+      color: $text-color;
+      cursor: pointer;
+      font-size: 1.5rem;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        color: lighten($text-color, 20%);
+      }
+    }
+  }
+
+  .sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      margin: 0.2rem 0;
+
+      a {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        color: $text-color;
+        text-decoration: none;
+        padding: 0.75rem 1rem;
+        font-size: 15px;
+        border-left: 4px solid transparent;
+        transition: all 0.2s ease;
+        position: relative;
+
+        &:hover {
+          background-color: $sidebar-hover;
+        }
+      }
+
+      &.active a {
+        background-color: $sidebar-hover;
+        border-left: 4px solid $sidebar-active-border;
+        font-weight: 500;
+      }
+
+      .icon {
+        font-size: 22px;
+        min-width: 24px;
+        text-align: center;
+      }
+
+      .label {
+        flex: 1;
+        white-space: nowrap;
+        transition: opacity $transition-speed ease, width $transition-speed ease;
+      }
+    }
+  }
+}

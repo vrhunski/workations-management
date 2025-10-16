@@ -1,0 +1,219 @@
+<div class="workations-container">
+  <div class="header">
+    <h1>🌍 Workations Management</h1>
+    <p class="subtitle">Manage employee workations and remote work assignments</p>
+  </div>
+
+  <!-- Loading State -->
+  @if (loading()) {
+    <div class="loading-spinner">
+      <div class="spinner"></div>
+      <p>Loading workations...</p>
+    </div>
+  }
+
+  <!-- Error State -->
+  @if (error()) {
+    <div class="error-message">
+      <span class="error-icon">⚠️</span>
+      <span>{{ error() }}</span>
+    </div>
+  }
+
+  <!-- Workations Table -->
+  @if (!loading() && workations().length > 0) {
+    <div class="table-container">
+      <div class="table-header">
+        <div class="table-info">
+          <span class="total-count">Total: {{ totalElements() }} workations</span>
+          <span class="page-info">Page {{ currentPage() + 1 }} of {{ totalPages() }}</span>
+        </div>
+        <div class="page-size-selector">
+          <label for="pageSize">Items per page:</label>
+          <select
+            id="pageSize"
+            [(ngModel)]="pageSizeValue"
+            (change)="onPageSizeChange()">
+            <option [value]="5">5</option>
+            <option [value]="10">10</option>
+            <option [value]="20">20</option>
+            <option [value]="50">50</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Risk Legend -->
+      <div class="risk-legend">
+        <span class="legend-title">Risk Levels:</span>
+        <span class="legend-item">
+          <span class="risk-icon">🟢</span> NO RISK (0-50 days)
+        </span>
+        <span class="legend-item">
+          <span class="risk-icon">🟡</span> LOW RISK (51-100 days)
+        </span>
+        <span class="legend-item">
+          <span class="risk-icon">🔴</span> HIGH RISK (100+ days)
+        </span>
+      </div>
+
+      <table class="workations-table">
+        <thead>
+        <tr>
+          <th (click)="sortBy('id')" class="sortable">
+            ID
+            <span class="sort-indicator">
+                @if (currentSortBy() === 'id') {
+                  {{ currentSortDirection() === 'ASC' ? '▲' : '▼' }}
+                }
+              </span>
+          </th>
+          <th (click)="sortBy('employee')" class="sortable">
+            Employee
+            <span class="sort-indicator">
+                @if (currentSortBy() === 'employee') {
+                  {{ currentSortDirection() === 'ASC' ? '▲' : '▼' }}
+                }
+              </span>
+          </th>
+          <th (click)="sortBy('country')" class="sortable">
+            Origin Country
+            <span class="sort-indicator">
+                @if (currentSortBy() === 'country') {
+                  {{ currentSortDirection() === 'ASC' ? '▲' : '▼' }}
+                }
+              </span>
+          </th>
+          <th (click)="sortBy('countryDest')" class="sortable">
+            Destination
+            <span class="sort-indicator">
+                @if (currentSortBy() === 'countryDest') {
+                  {{ currentSortDirection() === 'ASC' ? '▲' : '▼' }}
+                }
+              </span>
+          </th>
+          <th (click)="sortBy('startDate')" class="sortable">
+            Start Date
+            <span class="sort-indicator">
+                @if (currentSortBy() === 'startDate') {
+                  {{ currentSortDirection() === 'ASC' ? '▲' : '▼' }}
+                }
+              </span>
+          </th>
+          <th (click)="sortBy('endDate')" class="sortable">
+            End Date
+            <span class="sort-indicator">
+                @if (currentSortBy() === 'endDate') {
+                  {{ currentSortDirection() === 'ASC' ? '▲' : '▼' }}
+                }
+              </span>
+          </th>
+          <th (click)="sortBy('days')" class="sortable">
+            Days
+            <span class="sort-indicator">
+                @if (currentSortBy() === 'days') {
+                  {{ currentSortDirection() === 'ASC' ? '▲' : '▼' }}
+                }
+              </span>
+          </th>
+          <th (click)="sortBy('risk')" class="sortable">
+            Risk Level
+            <span class="sort-indicator">
+                @if (currentSortBy() === 'risk') {
+                  {{ currentSortDirection() === 'ASC' ? '▼' : '▲' }}
+                }
+              </span>
+          </th>
+          <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+          @for (workation of workations(); track workation.id) {
+            <tr class="workation-row">
+              <td class="id-cell">{{ workation.id }}</td>
+              <td class="employee-cell">
+                <span class="employee-icon">👤</span>
+                {{ workation.employee }}
+              </td>
+              <td class="country-cell">
+                <span class="flag">{{ getCountryFlag(workation.country) }}</span>
+                {{ workation.country }}
+              </td>
+              <td class="country-cell">
+                <span class="flag">{{ getCountryFlag(workation.countryDest) }}</span>
+                {{ workation.countryDest }}
+              </td>
+              <td class="date-cell">
+                <span class="date-icon">📅</span>
+                {{ formatDate(workation.startDate) }}
+              </td>
+              <td class="date-cell">
+                <span class="date-icon">📅</span>
+                {{ formatDate(workation.endDate) }}
+              </td>
+              <td class="days-cell">
+                <span class="days-badge">{{ workation.days }}</span>
+              </td>
+              <td class="risk-cell">
+                <span [class]="'risk-badge ' + getRiskClass(getWorkationRisk(workation))">
+                  <span class="risk-icon">{{ getRiskIcon(getWorkationRisk(workation)) }}</span>
+                  {{ formatRisk(getWorkationRisk(workation)) }}
+                </span>
+              </td>
+              <td class="actions-cell">
+                <button
+                  class="btn-edit"
+                  (click)="editWorkation(workation)"
+                  title="Edit workation">
+                  ✏️
+                </button>
+                <button
+                  class="btn-delete"
+                  (click)="deleteWorkation(workation.id)"
+                  title="Delete workation">
+                  🗑️
+                </button>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+
+      <!-- Pagination -->
+      <div class="pagination">
+        <button
+          class="btn-page"
+          [disabled]="currentPage() === 0"
+          (click)="previousPage()">
+          ← Previous
+        </button>
+
+        <div class="page-numbers">
+          @for (page of getPageNumbers(); track page) {
+            <button
+              class="btn-page-number"
+              [class.active]="page === currentPage()"
+              (click)="goToPage(page)">
+              {{ page + 1 }}
+            </button>
+          }
+        </div>
+
+        <button
+          class="btn-page"
+          [disabled]="currentPage() >= totalPages() - 1"
+          (click)="nextPage()">
+          Next →
+        </button>
+      </div>
+    </div>
+  }
+
+  <!-- No Data State -->
+  @if (!loading() && workations().length === 0) {
+    <div class="no-data">
+      <span class="no-data-icon">📭</span>
+      <h3>No workations found</h3>
+      <p>Start by creating your first workation!</p>
+    </div>
+  }
+</div>

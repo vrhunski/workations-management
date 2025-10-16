@@ -1,0 +1,40 @@
+/* layout: sidebar left, header top, routed content to the right */
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+  align-items: stretch;
+  background: #dde2e1;
+}
+
+app-sidebar,
+.app-sidebar,
+.sidebar {
+  flex: 0 0 240px;
+  max-width: 260px;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+.main-content {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  padding: 28px 40px;
+  box-sizing: border-box;
+}
+
+.app-header {
+  flex: 0 0 auto;
+  z-index: 10;
+}
+
+.page-content {
+  flex: 1 1 auto;
+  overflow: auto;
+  margin-top: 12px;
+  box-sizing: border-box;
+}
+
+.page-content > * { width: 100%; display: block; }

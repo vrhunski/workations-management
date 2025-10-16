@@ -1,0 +1,16 @@
+<nav class="sidebar" [class.collapsed]="collapsed">
+  <div class="sidebar-header">
+    <button class="toggle-btn" (click)="toggleSidebar()" type="button">
+        <mat-icon>{{ collapsed ? 'chevron_right' : 'chevron_left' }}</mat-icon>
+    </button>
+  </div>
+
+  <ul class="sidebar-menu">
+    <li *ngFor="let item of menuItems" routerLinkActive="active" matTooltip="{{item.name}}" matTooltipPosition="right">
+      <a [routerLink]="item.route">
+        <span class="material-icons icon">{{ item.icon }}</span>
+        <span class="label">{{ item.name }}</span>
+      </a>
+    </li>
+  </ul>
+</nav>

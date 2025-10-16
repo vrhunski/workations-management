@@ -1,0 +1,84 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background-color: #3f51b5;
+  color: white;
+  padding: 10px 20px;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #f4f4f4;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-top: 20px;
+}
+
+.sidebar a {
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #333;
+  display: block;
+}
+
+.sidebar a:hover {
+  background-color: #ddd;
+}
+
+.main-content {
+  margin-left: 260px;
+  padding: 20px;
+  background: #f5f5f5;
+}
+
+h1 {
+  color: #3f51b5;
+}
+
+/* ...existing code... */
+
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+  align-items: stretch;
+  background: #dde2e1; /* optional background to match design */
+}
+
+/* ensure the sidebar component keeps its width */
+app-sidebar,
+.sidebar {
+  flex: 0 0 220px; /* adjust width to match your sidebar css (220/240px) */
+  max-width: 260px;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+/* main content grows and sits to the right of sidebar */
+.main-content {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  padding: 28px 40px;
+  box-sizing: border-box;
+  overflow: auto;
+}
+
+/* page area where routed component content is rendered */
+.page {
+  flex: 1 1 auto;
+  padding-top: 12px;
+  box-sizing: border-box;
+}
+
+/* small safety: make sure router-outlet content doesn't force a new row */
+.page > * {
+  display: block;
+  width: 100%;
+}
+
+/* ...existing code... */
